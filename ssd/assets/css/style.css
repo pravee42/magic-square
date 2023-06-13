@@ -1,0 +1,403 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Titillium+Web&display=swap');
+
+/* **************************************** */
+/* Parameters to define the colors */
+/* **************************************** */
+:root {
+  /* Defining colors as variables */
+  --color-dark-1: #282853;
+  --color-dark-2:#326771;
+  --color-light: #EAF2EF;
+  --color-highlight-1: #96DCED;
+  --color-highlight-1-trans: rgb(177, 229, 242, 0.9);
+  --color-highlight-3: #42D9C8;
+  --color-highlight-4: #E228BC;
+  --color-highlight-2: #8EA4D2;
+  --color-msg-wrong2: #f44336;
+  --color-msg-wrong: #E228BC;
+  --color-msg-correct: #42D9C8;
+  --color-msg-hint: #282853;
+  }
+
+/* **************************************** */
+/* Base CSS, font size, colors, list items*/
+/* **************************************** */
+
+/* Clearing css and zeroing all margins, pads and borders */
+* {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+/* Setting default font size as 10px */
+html {
+  font-size: 62.5%;   /* Set font size to 62.5% so that 1rem = 10px for initial designing (16px / 62.5 === 10) */
+  font-family: 'Titillium Web', sans-serif; /* Google font for body */
+}
+
+body {
+  background-color: var(--color-dark-1);
+  color: var(--color-dark-2); /* font color */
+  font-size: 2.5rem;
+}
+
+li {
+  margin-left: 3rem;
+  font-size: 2rem;
+  list-style-type: circle;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+/* **************************************** */
+/* Hide class for hiding various class elements */
+/* **************************************** */
+.hide {
+  display: none;
+}
+
+/* **************************************** */
+/* Container Styling */
+/* **************************************** */
+  .container {
+    min-width: 45%;
+    max-width: 70rem;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 0 0.5rem 0.2rem var(--color-highlight-4);
+    margin: 0 auto 0 auto; /* Centering the content */
+    background-color: var(--color-light);
+    margin-bottom: 4rem; /* Margin between container and footer */
+  }
+
+  #container-intro {
+    /* this is originally hidden before fading in */
+    text-align: center;
+  }
+
+  #container-instructions img {
+    max-width: 100%;
+    image-rendering: -webkit-optimize-contrast; /* fixing blurry image */
+  }
+
+/* **************************************** */
+/* Title and Text Styling */
+/* **************************************** */
+
+.title {
+  font-family: 'Monoton', cursive;
+  font-size:6rem;
+  font-weight: normal;
+  padding: 2rem 0 2rem 0;
+  display:block;
+  text-align:center;
+}
+
+.gradient-text{
+  background: linear-gradient(to right,var(--color-highlight-3), var(--color-highlight-4));
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip:text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+
+.gradient-text:hover{
+  animation: rainbow 2s ease-in-out infinite;
+  transition: color .2s ease-in-out;
+}
+
+/* mouse over link */
+.gradient-text > a:hover {
+  text-decoration: none;
+}
+
+@keyframes rainbow { 
+  0%{background-position:left}
+  50%{background-position:right}
+  100%{background-position:left}
+}
+
+.intro-text, .instructions-text{
+  margin: 0 5vw 0 5vw;
+}
+
+.size-button, .difficulty-button {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Text configuration for the settings container */
+.settings-text-grid, .settings-text-diff, .instructions-text{
+  color: var(--color-dark-2);
+  text-align: center;
+}
+
+/* Text configuration for the settings container */
+.settings-text-grid, .settings-text-diff {
+  font-size: 1.75rem;
+  font-style: italic;
+}
+
+.color-highlight {
+  color: var(--color-highlight-4);
+}
+
+/* **************************************** */
+/* Magic Square Styling */
+/* **************************************** */
+
+.magic-square {
+    --grid-size: 3; /* Start with 3x3 */
+    --font-size: 2.5rem;
+    position: relative;
+    font-size: var(--font-size);
+    display: grid;
+    width: 40rem;
+    height: 40rem;
+    background-color: var(--color-dark-1);
+    padding: 1rem;
+    grid-template: repeat(var(--grid-size), 1fr) / repeat(var(--grid-size), 1fr);
+    margin: 0rem auto 0 auto; /* Centering the content */
+  }
+  .square-item {
+    background-color: var(--color-highlight-1-trans);
+    border-color: var(--color-dark-1);
+    color: var(--color-highlight-4);
+    border: 1px solid var(--color-dark-2);
+    padding: 5px;
+    text-align: center; 
+    display: grid;
+    align-items: center;
+    font-size: var(--font-size);
+  }
+
+  .answer-box {
+    width: 4.5rem;
+    font-size: var(--font-size);
+    margin: 0 auto; /* Placing input in the center */
+    text-align: center;
+  }
+
+/* **************************************** */
+/* Button Styling */
+/* **************************************** */
+  #submit-button, #hint-button, #start-button {
+    margin: 2rem auto;
+  }
+
+  .main-buttons {
+    text-align: center;
+  }
+
+  .game-buttons {
+    text-align: center;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px); /* making the button move up*/
+    box-shadow: 0 1rem 2rem var(--color-highlight-2); /* x, y and blur values */
+  }
+
+  .btn {
+    font-size: 1.75rem;
+    padding: 1rem;
+    margin: 0 auto; /* Centering the content */
+    width: 16rem;
+    border: 0.2rem solid var(--color-highlight-1);
+    background-color: var(--color-dark-1);
+    color: var(--color-highlight-1);
+    border-radius: 1rem;
+  }
+
+  .btn-click {
+    /* Css to add once the button has been clicked */
+    background-color: var(--color-highlight-1);
+    color:var(--color-highlight-4);
+  }
+
+  .btn-size, .btn-diff, #instructions-button, #settings-button, #play-button, #reset-button {
+    margin-bottom: 2rem;
+  }
+
+/* **************************************** */
+/* Credits, located below Footer */
+/* **************************************** */
+
+ #credits {
+   text-align: center;
+   color:var(--color-light);
+   font-size: 1.5rem;
+   line-height: 2.25rem;
+   margin-bottom: 6rem;
+   }
+
+ #credits i {
+  color: var(--color-highlight-4)
+  }
+
+#credits p {
+  margin-bottom: 0rem; /* removing the margin bottom styling */
+  }
+
+/* **************************************** */
+/* Styling the links */
+/* **************************************** */
+
+/* unvisited link */
+a:link {
+  color:var(--color-highlight-3);
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color:var(--color-highlight-4);
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color:var(--color-highlight-4);
+  text-decoration: underline;
+}
+
+/* **************************************** */
+/* Alert Banners when playing game */
+/* **************************************** */
+
+.alert {
+  font-size: 2rem;
+  padding: 1rem;
+  background-color: var(--color-msg-wrong);
+  border-radius: 1rem;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  width: 40rem;
+  margin: 0rem auto 2rem auto;
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+#correct-ans-msg {
+  background-color:var(--color-msg-correct);
+  color: var(--color-dark-1)
+}
+
+#hint-msg {
+  background-color: var(--color-msg-hint);
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+/* **************************************** */
+/* Media Queries to ensure site is responsive */
+/* **************************************** */
+
+/* For medium screen sizes from 1200px and below 
+   Container width is set to 60% to make better use of screen width*/
+@media screen and (max-width: 1200px) {
+
+  .container {
+    max-width: 60%;
+  }
+}
+
+/* For medium screen sizes from 900px and below 
+   Container width is set to 80%  */
+
+@media screen and (max-width: 900px) {
+  
+  .container {
+    max-width: 80%;
+    min-width: 80%;
+  }
+}
+
+/* For medium screen sizes from 525px and below 
+   Container spans full screen; sizing of magic square adjusted */
+@media screen and (max-width: 525px) {
+  
+  .container {
+    max-width: 100%;
+    min-width: 100%;
+    border-radius: 0rem;
+  }
+
+  .magic-square {
+    --font-size: 1.5rem;
+    width: 27.5rem;
+    height: 27.5rem;
+    padding: 5px;
+    font-size: var(--font-size);
+  }
+
+  .answer-box {
+    width:2.75rem;
+  }
+
+  .alert {
+    width: 26rem;
+    padding: 5px;
+  }
+}
+
+/* For medium screen sizes from 330px and below 
+   Container spans full screen; sizing of magic square adjusted */
+   @media screen and (max-width: 330px) {
+  
+    .magic-square {
+      --font-size: 1.25rem;
+      width: 25rem;
+      height: 25rem;
+      padding: 5px;
+      font-size: var(--font-size);
+    }
+  
+    .answer-box {
+      width:2.25rem;
+    }
+
+    .alert {
+      width: 23rem;
+      padding: 5px;
+    }
+
+    .title {
+      font-size: 5rem;
+    }
+
+    #submit-button {
+      margin-top: 0rem;
+    }
+  }
+
+  .footer {
+  padding: 20px;
+
+}
+
+.footer p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}

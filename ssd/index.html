@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+      content="Play the Magic Square Game ! Challenge yourself to solve Magic Squares of varying difficulty and improve your mathematical skills in the process." />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!--  Using the Cloudflare jquery library: -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/d375cce442.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
+
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <title>Magic Square Game</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHJFWVLBK6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-GHJFWVLBK6');
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <h1 class="title gradient-text">
+        <a href="index.html">Magic Square Game</a>
+      </h1>
+    </div>
+
+    <div class="main-buttons">
+      <button class="btn hide" id="instructions-button">Instructions</button>
+      <button class="btn hide" id="settings-button">Settings</button>
+      <button class="btn hide" id="play-button">Play Game !</button>
+      <button class="btn hide" id="reset-button">Reset Game</button>
+    </div>
+
+    <div class="container">
+      <div id="container-intro" class="intro-text">
+        <p><br />Welcome to the Magic Square Game !</p>
+        <p>
+          This game will test your mathematical skills and challenge you to
+          solve magic squares.
+        </p>
+        <div class="rounded border-2 border-grey-100 mt-3 w-auto mx-auto flex flex-col items-center">
+          <p class="text-gray-600 mb-4">
+            Made with <i class="fas fa-heart text-red-500"></i> by
+          </p>
+          <div class="flex items-center">
+            <div class="mr-4">
+              <i class="fas fa-user-circle text-4xl text-gray-500"></i>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">Praveen Kumar</p>
+              <p class="text-lg font-semibold">Mohan Raj</p>
+              <p class="text-lg font-semibold">Tilak Kumar</p>
+            </div>
+          </div>
+        </div>
+        <button class="btn" id="start-button">Start Game !</button>
+      </div>
+
+      <div id="container-game" class="hide">
+        <div>&nbsp;</div>
+        <div class="alert hide" id="wrong-ans-msg"></div>
+        <div class="alert hide" id="correct-ans-msg">
+          <span class="closebtn">&times;</span>
+        </div>
+        <div class="alert hide" id="hint-msg">
+          <span class="closebtn">&times;</span>
+        </div>
+        <div class="magic-square"></div>
+        <div class="main-buttons">
+          <button class="btn" id="hint-button">Hint</button>
+          <button class="btn" id="submit-button">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/d375cce442.js" crossorigin="anonymous"></script>
+    <script src="assets/js/magic-square.js"></script>
+  </body>
+
+</html>
